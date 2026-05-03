@@ -1457,10 +1457,10 @@
 
         @media (max-width: 768px) {
 
-            .mobile-only-btn { display: none; }
+            .mobile-only-btn { display: flex; }
         .mobile-only-list { display: none !important; }
         .mobile-only-list.open { display: block !important; max-height: 2000px; border: 1px solid #222; border-top: none; margin-bottom: 12px; }
-        .desktop-only-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+        .desktop-only-grid { display: none !important; }
 
         @media (max-width: 768px) {
             .mobile-only-btn { display: flex; }
@@ -3340,9 +3340,6 @@
             const autresList = document.createElement('div');
             autresList.className = 'fidelite-cadeau-dropdown-list mobile-only-list';
 
-            const autresGrid = document.createElement('div');
-            autresGrid.className = 'fidelite-cadeaux-grid desktop-only-grid';
-
             const autres = [
                 ["Lotion nettoyante démaquillante", "200 ml"],
                 ["Mousse nettoyante", "200 ml"],
@@ -3358,9 +3355,7 @@
             ];
 
             autres.forEach(([label, sublabel]) => {
-                const item = createItem(label, sublabel);
-                autresList.appendChild(item.cloneNode(true));
-                autresGrid.appendChild(item);
+                autresList.appendChild(createItem(label, sublabel));
             });
 
             autresBtnMobile.onclick = () => {
@@ -3370,7 +3365,6 @@
 
             autresWrapper.appendChild(autresBtnMobile);
             autresWrapper.appendChild(autresList);
-            autresWrapper.appendChild(autresGrid);
             grid.appendChild(autresWrapper);
         }
 
