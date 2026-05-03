@@ -1458,12 +1458,13 @@
         @media (max-width: 768px) {
 
             .mobile-only-btn { display: none; }
-        .mobile-only-list { display: none; }
+        .mobile-only-list { display: none !important; }
+        .mobile-only-list.open { display: block !important; max-height: 2000px; border: 1px solid #222; border-top: none; margin-bottom: 12px; }
         .desktop-only-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
 
         @media (max-width: 768px) {
             .mobile-only-btn { display: flex; }
-            .desktop-only-grid { display: none; }
+            .desktop-only-grid { display: none !important; }
         }
 
         /* ===== HAMBURGER MENU ===== */
