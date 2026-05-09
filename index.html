@@ -1695,7 +1695,6 @@
                         <a href="#" data-page="maison">Gamme Home</a>
                     </div>
                 </li>
-                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
     </header>
@@ -1995,20 +1994,6 @@
             </div>
         </div>
     </div>
-
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <h2>CONTACTEZ-MOI</h2>
-            <p>Besoin d'un conseil ? Une question sur un parfum ?<br>Je suis à votre écoute</p>
-            
-            <form class="contact-form" id="contactForm">
-                <input type="text" class="form-input" placeholder="Votre nom" required>
-                <input type="email" class="form-input" placeholder="Votre email" required>
-                <textarea class="form-input" placeholder="Votre message" required></textarea>
-                <button type="submit" class="cta-button">ENVOYER</button>
-            </form>
-        </div>
-    </section>
 
     <footer>
         <p>&copy; 2026 Élégance Parfums - Tous droits réservés</p>
@@ -2574,12 +2559,6 @@
 
         document.getElementById('searchBar').addEventListener('input', (e) => {
             searchParfums(e.target.value, currentData);
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Merci pour votre message ! Je vous répondrai dans les plus brefs délais.');
-            e.target.reset();
         });
 
         document.querySelectorAll('a[href^="#"]:not(.dropbtn)').forEach(anchor => {
